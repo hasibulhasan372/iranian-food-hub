@@ -1,3 +1,13 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.my-container {
+    @apply lg:w-[1170px] m-auto;
+}
+.outlet-height{
+    @apply min-h-[calc(100vh-410px)]
+}
+.hhh-color {
+    @apply text-slate-200;
+}
