@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import { FaUserCircle } from 'react-icons/fa';
 
 const Header = () => {
     return (
@@ -9,15 +10,15 @@ const Header = () => {
                     <a className="btn btn-ghost normal-case lg:text-3xl">Iranian Food Hub</a>
                 </div>
                 <div className="flex-none lg:pl-[750px] lg:gap-32 gap-6 text-right">
-                    <div className='space-x-10'>
-                        <NavLink>Home</NavLink>
+                    <div className='space-x-10 text-lg font-semibold'>
+                        <NavLink to='/'>Home</NavLink>
                         <NavLink>Blog</NavLink>
                     </div>
                     <div className="dropdown dropdown-end">
                         <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-                            <div className="w-10 rounded-full">
-                                <img src="/images/stock/photo-1534528741775-53994a69daeb.jpg" />
-                            </div>
+                            
+                                <FaUserCircle className='text-3xl'></FaUserCircle>
+                           
                         </label>
                         <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
                             <li>
