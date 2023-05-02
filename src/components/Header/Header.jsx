@@ -1,8 +1,18 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { FaUserCircle } from 'react-icons/fa';
+import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
+    const {user, logOut} = useContext(AuthContext)
+    console.log(user)
+    const handleLogOut = () =>{
+        logOut()
+        .then()
+        .catch(error =>{
+            console.log(error)
+        })
+    }
     return (
         <div className='my-container lg:m-auto'>
             <div className="navbar bg-slate-200 ">
@@ -15,20 +25,17 @@ const Header = () => {
                         <NavLink>Blog</NavLink>
                     </div>
                     <div className="dropdown dropdown-end">
-                        <label tabIndex={0} className="btn btn-ghost btn-circle avatar">
-
+                            {
+                                user ?
+                                 <div className='flex gap-2 items-center'>
+                                <p className='lowercase'>{user.email}</p>
+                                <button className='bg-purple-600 rounded text-white p-2 text-sm' onClick={handleLogOut}>Logout</button>
+                                </div> : 
                             <Link to='/login'><FaUserCircle className='text-3xl'></FaUserCircle></Link>
 
-                        </label>
-                        <ul tabIndex={0} className="mt-3 p-2 shadow menu menu-compact dropdown-content bg-base-100 rounded-box w-52">
-                            <li>
-                                <a className="justify-between">
-                                    Profile
-
-                                </a>
-                            </li>
-                            <li><a>Logout</a></li>
-                        </ul>
+                            }
+                        
+                       
                     </div>
                 </div>
             </div>

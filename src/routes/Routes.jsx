@@ -5,6 +5,7 @@ import Chef from "../components/card/Chef/Chef";
 import Recipe from "../components/card/Recipe/Recipe";
 import Login from "../pages/login/Login/Login";
 import Register from "../pages/login/Register/Register";
+import PrivateRoute from "./PrivateRoute";
 
 const router = createBrowserRouter([
     {
@@ -21,7 +22,7 @@ const router = createBrowserRouter([
             },
             {
                 path: '/chef/:id',
-                element: <Recipe></Recipe>,
+                element: <PrivateRoute><Recipe></Recipe></PrivateRoute>,
                 loader: ({ params }) => fetch(`https://iranian-food-hub-server-hasibulhasan372.vercel.app/chef/${params.id}`)
             },
             {

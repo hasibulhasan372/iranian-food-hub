@@ -1,12 +1,38 @@
-import React from 'react';
+import React, { useContext } from 'react';
 import { Form, Link } from 'react-router-dom';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import GoogleReg from '../../../components/GoogleReg/GoogleReg';
+import GithubReg from '../../../components/GithubReg/GithubReg';
 
 const Register = () => {
+    const {createUser} = useContext(AuthContext);
+
+    const handleSignUp = (e) =>{
+        e.preventDefault();
+        const form = e.target;
+        const name = form.name.value;
+        const photo = form.photo.value;
+        const email = form.email.value;
+        const password = form.password.value;
+        console.log(email, password)
+        createUser(email, password)
+        .then(result =>{
+            const signUpUser = result.user;
+            console.log(signUpUser)
+            form.reset('')
+        })
+        .catch(error =>{
+            console.log(error)
+        })
+        
+    };
+    
+
     return (
-        <div className='my-container grid lg:grid-cols-3 bg-[#b3c4ca] lg:pb-[100px]'>
-        <h1>This is the Sign up Page</h1>
-        <div className=' justify-center lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
-        <Form>
+        <div className='my-container flex justify-center bg-[#b3c4ca] lg:pb-[100px]'>
+        
+        <div className=' lg:w-2/6 lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
+        <Form onSubmit={handleSignUp}>
             <div className='w-full'>
                 <label htmlFor="name" className='form-label-style '>Your name</label>
                 <input type="text" name="name" id="name" placeholder='Your name' className=' form-input-style' required />
@@ -31,8 +57,12 @@ const Register = () => {
             </div>
             <div className='lg:mt-6 space-x-4'>
                 <p className='text-lg font-bold pb-4'>Or SignUp</p>
-            <button className='border border-yellow-400 text-white font-semibold rounded px-4 py-2'>Google</button>
-            <button className='border border-slate-500 text-white  font-semibold rounded px-4 py-2'>Github  </button>
+                
+                <div className='flex gap-4'>
+                <GoogleReg></GoogleReg>
+                <GithubReg></GithubReg>
+                </div>
+
         </div>
         </div>
         

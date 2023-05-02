@@ -9,7 +9,7 @@
     @apply min-h-[calc(100vh-410px)]
 }
 .form-input-style{
-    @apply border border-slate-400 py-2 w-5/6 pl-2 rounded  placeholder:text-black 
+    @apply border border-slate-400 py-2 w-full pl-2 rounded  placeholder:text-black placeholder:text-sm
     focus:outline-none;
 }
 .form-label-style{
