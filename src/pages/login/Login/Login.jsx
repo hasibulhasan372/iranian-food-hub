@@ -9,8 +9,7 @@ const Login = () => {
     const [error, setError] = useState(null);
     const navigate = useNavigate();
     const location = useLocation();
-    console.log(location)
-    const from = location.state ?.from ?.pathname || '/'
+    const from = location.state ?.from ?.pathname || '/';
 
     const {logIn} = useContext(AuthContext)
     const handleLogIn = (e) =>{
@@ -35,11 +34,11 @@ const Login = () => {
             <div className=' lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
             <Form onSubmit={handleLogIn}>
                 <div className='w-full'>
-                    <label htmlFor="email" className='form-label-style'>Your Email</label>
+                    <label htmlFor="email" className='form-label-style fill-important'>Your Email</label>
                     <input type="email" name="email" id="email" placeholder='Your email Address' className='form-input-style  ' required />
                 </div>
                 <div className='w-full mt-6'>
-                    <label htmlFor="password" className='form-label-style'>Your Password</label>
+                    <label htmlFor="password" className='form-label-style fill-important'>Your Password</label>
                     <input type="password" name="password" id="password" placeholder='Your Password' className='form-input-style  ' required />
                 </div>
                 <button type="submit" className='btn mt-4 capitalize text-lg font-semibold bg-[#4681f4] border-none hover:bg-[#1b62f0]'>Submit</button>

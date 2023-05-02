@@ -5,7 +5,6 @@ import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
     const {user, logOut} = useContext(AuthContext)
-    console.log(user)
     const handleLogOut = () =>{
         logOut()
         .then()
@@ -28,7 +27,9 @@ const Header = () => {
                             {
                                 user ?
                                  <div className='flex gap-2 items-center'>
-                                <p className='lowercase'>{user.email}</p>
+                                {
+                                    user.photoURL ? <img src={user?.photoURL} className='w-8 rounded-full' alt="" /> : <small className=''>{user?.email}</small>
+                                }
                                 <button className='bg-purple-600 rounded text-white p-2 text-sm' onClick={handleLogOut}>Logout</button>
                                 </div> : 
                             <Link to='/login'><FaUserCircle className='text-3xl'></FaUserCircle></Link>

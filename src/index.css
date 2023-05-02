@@ -15,3 +15,6 @@
 .form-label-style{
     @apply block mb-1 font-semibold ;
 }
+.fill-important{
+    @apply after:content-['*'] after:ml-[2px] after:text-red-600;
+}

@@ -14,11 +14,9 @@ const Register = () => {
         const photo = form.photo.value;
         const email = form.email.value;
         const password = form.password.value;
-        console.log(email, password)
         createUser(email, password)
         .then(result =>{
             const signUpUser = result.user;
-            console.log(signUpUser)
             form.reset('')
         })
         .catch(error =>{
@@ -35,18 +33,18 @@ const Register = () => {
         <Form onSubmit={handleSignUp}>
             <div className='w-full'>
                 <label htmlFor="name" className='form-label-style '>Your name</label>
-                <input type="text" name="name" id="name" placeholder='Your name' className=' form-input-style' required />
+                <input type="text" name="name" id="name" placeholder='Your name' className=' form-input-style'  />
             </div>
             <div className='w-full mt-4'>
                 <label htmlFor="photo" className='form-label-style '>Your Photo URL</label>
-                <input type="text" name="photo" id="photo" placeholder='Your Photo URL' className=' form-input-style' required />
+                <input type="text" name="photo" id="photo" placeholder='Your Photo URL' className=' form-input-style'  />
             </div>
             <div className='w-full mt-4'>
-                <label htmlFor="email" className='form-label-style '>Your Email</label>
+                <label htmlFor="email" className='form-label-style fill-important'>Your Email</label>
                 <input type="email" name="email" id="email" placeholder='Your email Address' className=' form-input-style' required />
             </div>
             <div className='w-full mt-4'>
-                <label htmlFor="password" className='form-label-style '>Your Password</label>
+                <label htmlFor="password" className='form-label-style fill-important'>Your Password</label>
                 <input type="password" name="password" id="password" placeholder='Your Password' className=' form-input-style' required />
             </div>
             <button type="submit" className='btn mt-4 capitalize text-lg font-semibold bg-[#4681f4] border-none hover:bg-[#1b62f0]'>Submit</button>
