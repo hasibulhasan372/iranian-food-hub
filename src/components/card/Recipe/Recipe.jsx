@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
+import RecipeDetails from '../RecipeDetails/RecipeDetails';
 
 const Recipe = () => {
     const recipes = useLoaderData();
@@ -15,10 +16,26 @@ const Recipe = () => {
         })
     },[]);
    
-    console.log(chef.id)
     return (
-        <div>
+        <div className='container m-auto'>
+            <div className='py-20 grid lg:grid-cols-2 lg:gap-20'>
+            <div>
             <h1>Hello Here is the recipe: {chef.name} </h1>
+            </div>
+            <div>
+            <img className='w-5/6 h-[600px]' src={chef.img} alt="" />
+            </div>
+            </div>
+
+            <div className='grid lg:grid-cols-3'>
+                {
+                    recipes.map(recipe => <RecipeDetails
+                    recipe ={recipe}
+                    key={recipe.id}
+                    
+                    ></RecipeDetails>)
+                }
+            </div>
         </div>
     );
 };
