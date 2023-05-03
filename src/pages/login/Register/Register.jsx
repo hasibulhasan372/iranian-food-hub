@@ -4,7 +4,7 @@ import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import GoogleReg from '../../../components/GoogleReg/GoogleReg';
 import GithubReg from '../../../components/GithubReg/GithubReg';
 import {  toast } from 'react-toastify';
-import { signOut } from 'firebase/auth';
+import { signOut, updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
@@ -29,6 +29,7 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
             const signUpUser = result.user;
+            updateUserProfile(result.user, name, photo)
             successAlert();
             form.reset('');
             setError('');
@@ -41,6 +42,17 @@ const Register = () => {
             return setError("Please input the valid email or password")
         })
         
+    };
+
+    const updateUserProfile = (user, name, photo) =>{
+        updateProfile(user, {
+            displayName: name,
+            photoURL: photo
+        })
+        .then()
+        .catch(error =>{
+            setError(error.message)
+        })
     };
     
 

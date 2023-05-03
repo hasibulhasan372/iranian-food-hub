@@ -19,7 +19,8 @@ const Recipe = () => {
     }, []);
 
     return (
-        <div className='my-container m-auto'>
+        <section>
+            <div className='my-container m-auto'>
             <div className='py-20 grid lg:grid-cols-2 lg:gap-20'>
                 <div>
                     <h1>Hello Here is the recipe: {chef.name} </h1>
@@ -29,12 +30,16 @@ const Recipe = () => {
                 </div>
             </div>
 
-            <div>
+            
+        </div>
+        <div className='bg-[#1b4352] py-16'>
+            <div className='my-container pr-20 '>
+                <h1 className='text-[#fff] text-3xl font-serif font-semibold pb-4 text-center'>Chef Special</h1>
                 {
                     loading ?
                         <div className='flex justify-center'><div className="radial-progress text-primary" style={{ "--value": 70 }}>70%</div></div>
                         :
-                        <div className='grid lg:grid-cols-3'>
+                        <div className='space-y-10 '>
                             {
                                 recipes.map(recipe => <RecipeDetails
                                     recipe={recipe}
@@ -47,6 +52,7 @@ const Recipe = () => {
 
             </div>
         </div>
+        </section>
     );
 };
 

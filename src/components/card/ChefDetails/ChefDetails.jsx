@@ -13,7 +13,7 @@ const ChefDetails = ({ chef }) => {
                 <p className='text-xl font-semibold'>Experience: {yearOfExperience}</p>
                 <p className='text-xl font-semibold'>Chef Special Recipe: {numOfRecipes}</p>
 
-                <p className='flex items-center gap-1 text-lg lg:text-xl'><FaHeart></FaHeart> {likes}</p>
+                <p className='flex items-center gap-1 text-lg lg:text-xl'><FaHeart className='text-red-500'></FaHeart> {likes}</p>
                 <div className="card-actions justify-end">
                     <Link to={`/chef/${id}`} className="btn btn-primary capitalize font-semibold text-lg">View Recipes</Link>
                 </div>

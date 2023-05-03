@@ -20,8 +20,11 @@
 
 }
 .about-img{
-    @apply lg:w-full lg:h-64 ;
+    @apply w-full lg:w-full h-40 lg:h-64 ;
 }
 .active{
 @apply text-red-500;
+}
+.favorite-btn{
+    @apply rounded py-2 px-3  bg-[#1ecb71] text-[#071216] text-xl font-semibold hover:bg-[#1e7247] hover:text-white transition ease-in-out duration-500 disabled:bg-[#73b191] disabled:text-[#ffffff4f] ;
 }
