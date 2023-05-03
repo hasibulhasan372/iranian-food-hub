@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 const Footer = () => {
     return (
         <div className='my-container rounded bg-[#212529] border py-[50px] lg:px-10'>
-            <div className='grid lg:grid-cols-3 lg:gap-20'>
+            <div className='grid lg:grid-cols-4 lg:gap-10'>
                 <div className='text-[#fffc]'>
                     <h3 className='text-3xl'>Iranian Food Hub</h3>
                     <div className='mt-4 flex items-center gap-4'>
@@ -19,7 +19,7 @@ const Footer = () => {
                         <a className='border p-3 bg-white rounded-full'><FaMapMarkerAlt className='text-lg text-[#212529]'></FaMapMarkerAlt></a>
                         <div>
                             <p>Emam Khomaini Square
-                                Sazemane Sabte Asnad va Amlak <br />
+                               <br />
                                 Building No. 3 <br />
                                 Tehran</p>
                         </div>
@@ -31,6 +31,15 @@ const Footer = () => {
                         <li ><Link to='/' >Home</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
                         <li><Link to='/Login'>Login</Link></li>
+                    </ul>
+                </div>
+                <div className='text-[#fffc]'>
+                    <h3 className='text-2xl '>Our Services </h3>
+                    <ul className='mt-4 list-none space-y-2'>
+                        <li ><Link to='/' >Fresh Healthy Food</Link></li>
+                        <li><Link to='/'>24/7 Service</Link></li>
+                        <li><Link to='/'>Quick Service</Link></li>
+                        <li><Link to='/'>Traditional Cuisine</Link></li>
                     </ul>
                 </div>
                 <div className='text-[#fffc]'>
