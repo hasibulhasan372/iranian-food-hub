@@ -16,8 +16,8 @@ const Chef = () => {
     return (
         <div className='my-container m-auto lg:mt-20 lg:pb-16'>
             <div className='lg:mb-10 text-center'>
-            <h2 className=' mb-4 text-4xl font-bold font-serif'>Our Chefs</h2>
-            <h4 className='text-xl font-bold'>The Best <span className='text-yellow-600'>Iranian Chefs</span> in Town</h4>
+            <h2 className=' text-[#cc3333] text-xl font-bold font-serif'>Our Chefs</h2>
+            <h4 className='capitalize text-[#292929] text-4xl font-bold my-4'>The Best <span className='text-yellow-600'>Iranian Chefs</span> in Town</h4>
             </div>
 
             <div className='grid lg:grid-cols-3 lg:gap-y-6 '>

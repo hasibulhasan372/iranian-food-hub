@@ -11,8 +11,8 @@ const About = () => {
                     <img className='about-img' src="https://i.ibb.co/5FGnXts/Javaher-Polow.jpg" alt="" />
                     <img className='about-img' src="https://i.ibb.co/HG3N4vY/Persian-Tamarind-fish-11.webp" alt="" />
                 </div>
-                <div className=''>
-                    <h4 className='text-[#cc3333] text-xl'>About Us</h4>
+                <div >
+                    <h4 className='text-[#cc3333] text-xl font-bold font-serif'>About Us</h4>
                     <h2 className='capitalize text-[#292929] text-4xl font-bold my-4'>Why we are the best</h2>
                     <p className='font-medium'>Iranian cuisine are the culinary traditions of Iran. Due to the historically common usage of the term "Persia" to refer to Iran in the Western world, it is alternatively known as Persian cuisine, despite Persians being only one of a multitude of Iranian ethnic groups who have contributed to Iran's culinary traditions.</p>
                     <div className='mt-4 flex gap-2 items-center'>
