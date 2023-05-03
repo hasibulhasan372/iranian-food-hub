@@ -1,8 +1,10 @@
 import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
+import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 
 const Recipe = () => {
+    const { loading } = useState(AuthContext)
     const recipes = useLoaderData();
     const { chef_id } = recipes[0]
     const [chef, setChef] = useState([])
@@ -27,14 +29,22 @@ const Recipe = () => {
                 </div>
             </div>
 
-            <div className='grid lg:grid-cols-3'>
+            <div>
                 {
-                    recipes.map(recipe => <RecipeDetails
-                        recipe={recipe}
-                        key={recipe.id}
+                    loading ?
+                        <div className='flex justify-center'><div className="radial-progress text-primary" style={{ "--value": 70 }}>70%</div></div>
+                        :
+                        <div className='grid lg:grid-cols-3'>
+                            {
+                                recipes.map(recipe => <RecipeDetails
+                                    recipe={recipe}
+                                    key={recipe.id}
 
-                    ></RecipeDetails>)
+                                ></RecipeDetails>)
+                            }
+                        </div>
                 }
+
             </div>
         </div>
     );

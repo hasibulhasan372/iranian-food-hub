@@ -3,10 +3,18 @@ import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import GoogleReg from '../../../components/GoogleReg/GoogleReg';
 import GithubReg from '../../../components/GithubReg/GithubReg';
+import {  toast } from 'react-toastify';
+import { signOut } from 'firebase/auth';
+
 
 const Register = () => {
-    const {createUser} = useContext(AuthContext);
+    const {createUser, logOut} = useContext(AuthContext);
     const [error, setError] = useState(null)
+    const navigate = useNavigate();
+    const successAlert = () =>{
+        return alert('Successfully SignUp')
+    }
+    
 
     const handleSignUp = (e) =>{
         e.preventDefault();
@@ -21,7 +29,13 @@ const Register = () => {
         createUser(email, password)
         .then(result =>{
             const signUpUser = result.user;
+            successAlert();
             form.reset('');
+            setError('');
+            logOut();
+            navigate('/login');
+            
+            
         })
         .catch(error =>{
             return setError("Please input the valid email or password")
@@ -34,6 +48,7 @@ const Register = () => {
         <div className='my-container flex justify-center bg-[#b3c4ca] lg:pb-[100px]'>
         
         <div className=' lg:w-2/6 lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
+            <p className='text-lg font-bold mb-2'>Please Sign Up</p>
         <Form onSubmit={handleSignUp}>
             <div className='w-full'>
                 <label htmlFor="name" className='form-label-style '>Your name</label>
@@ -58,14 +73,13 @@ const Register = () => {
         <div className='mt-4 border-b border-slate-600 lg:pb-4'>
                 <p className='text-lg'>Already have an account? <Link to='/login' className='underline text-blue-700'>Login</Link></p>
             </div>
-            <div className='lg:mt-6 space-x-4'>
+            <div className='lg:mt-4 space-x-4'>
                 <p className='text-lg font-bold pb-4'>Or SignUp With</p>
                 
                 <div className='flex gap-4'>
                 <GoogleReg></GoogleReg>
                 <GithubReg></GithubReg>
                 </div>
-
         </div>
         </div>
         

@@ -6,15 +6,22 @@ import Recipe from "../components/card/Recipe/Recipe";
 import Login from "../pages/login/Login/Login";
 import Register from "../pages/login/Register/Register";
 import PrivateRoute from "./PrivateRoute";
+import Error from "../pages/Error/Error";
+import Blog from "../pages/BLog/Blog";
 
 const router = createBrowserRouter([
     {
         path: '/',
         element: <Main></Main>,
+        errorElement: <Error></Error>,
         children: [
             {
                 path: '/',
                 element: <Home></Home>
+            },
+            {
+                    path: 'blog',
+                    element: <Blog></Blog>
             },
             {
                 path: 'chef',

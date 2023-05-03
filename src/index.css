@@ -6,7 +6,7 @@
     @apply lg:w-[1170px] m-auto;
 }
 .outlet-height{
-    @apply min-h-[calc(100vh-410px)]
+    @apply min-h-[calc(100vh-354px)]
 }
 .form-input-style{
     @apply border border-slate-400 py-2 w-full pl-2 rounded  placeholder:text-black placeholder:text-sm
@@ -21,4 +21,7 @@
 }
 .about-img{
     @apply lg:w-full lg:h-64 ;
+}
+.active{
+@apply text-red-500;
 }

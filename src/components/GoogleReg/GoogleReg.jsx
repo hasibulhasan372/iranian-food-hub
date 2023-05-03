@@ -1,6 +1,6 @@
 import React, { useContext } from 'react';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
-import { FaGoogle} from 'react-icons/fa'
+import { FaGooglePlusG} from 'react-icons/fa'
 import { useLocation, useNavigate } from 'react-router-dom';
 
 const GoogleReg = () => {
@@ -21,7 +21,7 @@ const GoogleReg = () => {
     }
     return (
         <div>
-            <button onClick={handleGoogleSignIn} className='flex items-center gap-2 border border-yellow-400 text-white font-semibold rounded px-4 py-2'><FaGoogle></FaGoogle> Google</button>     
+            <button onClick={handleGoogleSignIn} className='flex items-center gap-2 border border-yellow-400 text-white font-semibold rounded px-4 py-2'><FaGooglePlusG className='text-xl'></FaGooglePlusG> Google</button>     
         </div>
     );
 };

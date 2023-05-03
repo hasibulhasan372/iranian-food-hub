@@ -32,6 +32,8 @@ const Login = () => {
     return (
         <div className='my-container flex justify-center bg-[#b3c4ca] lg:pb-[200px]'>
             <div className=' lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
+            <p className='text-lg font-bold mb-2'>Please Login</p>
+
             <Form onSubmit={handleLogIn}>
                 <div className='w-full'>
                     <label htmlFor="email" className='form-label-style fill-important'>Your Email</label>
@@ -45,10 +47,10 @@ const Login = () => {
                 <p className='text-red-900 mt-2 underline underline-offset-4 pb-1'>{error}</p>
             </Form>
            
-            <div className='mt-4 '>
+            <div className='mt-4  border-b border-slate-600 lg:pb-4'>
                     <p className='text-lg'>Don't have an account? <Link to='/register' className='underline text-blue-700'>Sign Up</Link></p>
                 </div>
-                <div className='lg:mt-6 space-x-4'>
+                <div className='lg:mt-4 space-x-4'>
                 <p className='text-lg font-bold pb-4'>Or SignUp</p>
                 
                 <div className='flex gap-4'>

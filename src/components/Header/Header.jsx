@@ -20,8 +20,8 @@ const Header = () => {
                 </div>
                 <div className="flex-none lg:pl-[450px] lg:gap-32 gap-6 text-right">
                     <div className='space-x-10 text-lg font-semibold'>
-                        <NavLink to='/'>Home</NavLink>
-                        <NavLink>Blog</NavLink>
+                        <NavLink className={({isActive}) => isActive ? "active" : ""} to='/'>Home</NavLink>
+                        <NavLink className={({isActive}) => isActive ? "active" : ""}  to='/blog'>Blog</NavLink>
                     </div>
                     <div className="dropdown dropdown-end">
                             {

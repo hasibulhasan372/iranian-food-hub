@@ -11,9 +11,7 @@ const Chef = () => {
         
         fetch('https://iranian-food-hub-server-hasibulhasan372.vercel.app/chef')
             .then(res => res.json())
-            .then(data => {
-                setChefs(data) 
-            })
+            .then(data => setChefs(data))
             
     }, []);
 
