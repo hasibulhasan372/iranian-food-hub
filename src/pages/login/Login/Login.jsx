@@ -25,7 +25,7 @@ const Login = () => {
             navigate(from, {replace : true})
         })
         .catch(error =>{
-            return setError('Input wrong email or password ', error.message)
+            return setError('Wrong email or password ')
         })
     }
 

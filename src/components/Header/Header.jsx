@@ -32,7 +32,7 @@ const Header = () => {
                                 }
                                 <button className='bg-purple-600 rounded text-white p-2 text-sm' onClick={handleLogOut}>Logout</button>
                                 </div> : 
-                            <Link to='/login'><FaUserCircle className='text-3xl'></FaUserCircle></Link>
+                            <Link to='/login' className='py-1 px-2 border rounded bg-yellow-600 text-white'>Login</Link>
 
                             }
                         
