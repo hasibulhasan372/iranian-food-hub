@@ -1,10 +1,14 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
+import { FaBars, FaCross } from 'react-icons/fa';
+import { HiX } from "react-icons/hi";
+
 
 const Header = () => {
     const { user, logOut } = useContext(AuthContext);
     const [isHovering, setHovering] = useState(false);
+    const [open, setOpen] = useState(false)
 
     const handleLogOut = () => {
         logOut()
@@ -24,10 +28,17 @@ const Header = () => {
         <div className='my-container lg:m-auto'>
             <div className="navbar ">
                 <div className="">
-                    <Link to='/' className="btn btn-ghost normal-case lg:text-3xl">Iranian Food Hub</Link>
+                    <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-3xl">Iranian Food Hub</Link>
                 </div>
+
                 <div className="flex-none lg:pl-[450px] lg:gap-32 gap-6 text-right">
-                    <div className='space-x-10 text-lg font-semibold'>
+                <button onClick={() => setOpen(!open)} className='lg:hidden'>
+                        {
+                            open ? <HiX className="h-6 w-6 text-slate-700 " ></HiX> : <FaBars className="h-6 w-6 text-slate-700 "></FaBars>
+                        }
+
+                    </button>
+                    <div className={`space-x-10 text-lg font-semibold absolute lg:static ${open ? 'hum-menu' : '-top-36 right-0 text-center'}`}>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/blog'>Blog</NavLink>
                     </div>
@@ -56,6 +67,7 @@ const Header = () => {
 
                     </div>
                 </div>
+
             </div>
         </div>
     );

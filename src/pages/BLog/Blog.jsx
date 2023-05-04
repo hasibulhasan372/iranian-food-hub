@@ -1,10 +1,13 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import ReactToPrint from 'react-to-print';
 
 const Blog = () => {
+    const ref = useRef()
     return (
-        <div className='my-container'>
-            <div className='mt-10'>
-                <h1 className='mb-3 text-3xl  font-bold'>What are the difference between Controlled and Uncontrolled Component?</h1>
+        <div className='my-container relative'>
+        <div ref={ref}>
+        <div className='mt-10'>
+                <h1 className='mb-3 text-3xl  font-bold'>1. What are the difference between Controlled and Uncontrolled Component?</h1>
                 <div className="overflow-x-auto">
                     <table className="table w-full ">
                         {/* head*/}
@@ -53,7 +56,7 @@ const Blog = () => {
                 </div>
             </div>
             <div className='py-10'>
-                <h1 className='mb-3 text-3xl  font-bold'>How to validate React props using PropTypes</h1>
+                <h1 className='mb-3 text-3xl  font-bold'>2. How to validate React props using PropTypes?</h1>
                 <div>
                     <h3 className='title-text'>React PropType Validator</h3>
                     <p>The PropTypes utility exports a wide range of validators for configuring type definitions.There are basic, renderable, instance, multiple, collection and required prop types validators available</p>
@@ -115,7 +118,7 @@ const Blog = () => {
                 </div>
             </div>
             <div className='py-10 '>
-                <h2 className='title-text mb-6'>Difference between Node.js and Express.js</h2>
+                <h2 className='title-text mb-6'>3. Difference between Node.js and Express.js?</h2>
                    <div className='grid grid-cols-2'>
                    <div>
                     <h3 className='title-text'>Express.js</h3>
@@ -146,7 +149,7 @@ const Blog = () => {
                    </div>
             </div>
             <div className='py-10'>
-                <h3 className='title-text mb-6'>What is a custom hook and Why will we create a Custom Hooks?</h3>
+                <h3 className='title-text mb-6'>4. What is a custom hook and Why will we create a Custom Hooks?</h3>
                 <p>
                     <span className='title-text'>Custom Hook:</span> Custom Hooks are reusable function. When we have component logic thats needs to be used by multiple components, we can extract that logic to a custom Hooks. Custom Hooks start with "use". Example: useFetch.
                 </p>
@@ -157,6 +160,13 @@ const Blog = () => {
                 <p><span className='title-text'>Readability:</span> Instead of using High-Order Components, one can use custom hooks to improve the readability of the code. Complex code can become hard to read if layers of providers surround the components, consumers, HOCs, render, props and other abstractions, generally known as wrapper hell. On the other hand, using custom hooks can provide a cleaner logic and a better way to understand the relationship between data and the component.</p>
                 <p><span className='title-text'>Testability:</span> Teh test containers and the presentational components are test separately in React. This is not a trouble when it comes to unit tests. But, if a container contains several HOCs, it becomes difficult as you will have to test the containers and teh components together to do the integration tests. Using custom Hooks, this problem can be eliminated as the hooks allow to combine containers and components into one component. It also makes it easier to write separate unit tests for custom hooks. Using custom hooks also makes it easier to mock hooks when compared to mock HOCs as it is similar to mocking a function    </p>
             </div>
+        </div>
+        <div className='absolute -top-[85px] right-0'>
+            <ReactToPrint 
+            trigger={() => <button className='py-1 px-2 rounded text-white bg-[#1ecb71] text-sm capitalize font-bold'>Print Blog</button>}
+            content={() => ref.current}
+            ></ReactToPrint>
+        </div>
         </div>
     );
 };
