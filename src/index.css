@@ -34,3 +34,6 @@
 .bg-overly{
     @apply bg-[#0000007b] py-40;
 }
+.title-text{
+    @apply text-3xl font-bold;
+}
