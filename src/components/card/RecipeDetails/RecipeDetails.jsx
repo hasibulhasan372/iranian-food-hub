@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { ToastContainer, toast } from 'react-toastify';
+import LazyLoad from 'react-lazy-load';
 
 const RecipeDetails = ({ recipe }) => {
   const { name, ratings, img, ingredients, cookingMethods } = recipe;
@@ -16,7 +17,7 @@ const RecipeDetails = ({ recipe }) => {
   return (
 
     <div className='flex gap-6 justify-start border border-[#1ecb71]  p-4 rounded'>
-      <img className='lg:h-72 w-[560px] rounded' src={img} alt="!recipe photo" />
+      <LazyLoad height={288}><img className='lg:h-72 w-[560px] rounded' src={img} alt="!recipe photo" /></LazyLoad>
       <div className="w-[200px] flex flex-col justify-between">
         <h2 className="text-3xl text-white font-serif pt-2">{name}</h2>
         <div>

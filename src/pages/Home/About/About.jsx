@@ -3,7 +3,8 @@ import {FaUtensils, FaGlassCheers} from 'react-icons/fa'
 
 const About = () => {
     return (
-        <div className='my-container lg:pb-16'>
+        <section className='pt-10'>
+            <div className='my-container lg:pb-16'>
             <div className='grid gap-6 lg:gap-10 lg:grid-cols-2 lg:items-center'>
             <div  className=''>
                     <h4 className='text-[#cc3333] text-xl font-bold font-serif text-center lg:text-left'>About Us</h4>
@@ -36,6 +37,7 @@ const About = () => {
             </div>
             
         </div>
+        </section>
     );
 };
 

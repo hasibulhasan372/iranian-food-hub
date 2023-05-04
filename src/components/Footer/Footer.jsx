@@ -4,7 +4,8 @@ import { Link } from 'react-router-dom';
 
 const Footer = () => {
     return (
-        <div className='my-container rounded bg-[#212529] border py-[50px] lg:px-10'>
+        <section className='bg-[#212529]'>
+            <div className='my-container  py-[50px] lg:px-10'>
             <div className='grid lg:grid-cols-4 lg:gap-10'>
                 <div className='text-[#fffc]'>
                     <h3 className='text-3xl'>Iranian Food Hub</h3>
@@ -56,6 +57,7 @@ const Footer = () => {
             </div>
 
         </div>
+        </section>
     );
 };
 

@@ -28,3 +28,9 @@
 .favorite-btn{
     @apply rounded py-2 px-3  bg-[#1ecb71] text-[#071216] text-xl font-semibold hover:bg-[#1e7247] hover:text-white transition ease-in-out duration-500 disabled:bg-[#73b191] disabled:text-[#ffffff4f] ;
 }
+.hero-banner{
+    @apply text-center bg-[url('https://k3c6w6q8.rocketcdn.me/wp-content/uploads/2023/01/nowruz-banner-big.jpg')]   bg-no-repeat bg-center bg-cover ;
+}
+.bg-overly{
+    @apply bg-[#0000007b] py-40;
+}

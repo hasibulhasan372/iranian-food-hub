@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react';
 import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
+import { FaHeart } from 'react-icons/fa';
 
 const Recipe = () => {
     const { loading } = useState(AuthContext)
@@ -19,39 +20,47 @@ const Recipe = () => {
     }, []);
 
     return (
-        <section>
-            <div className='my-container m-auto'>
-            <div className='py-20 grid lg:grid-cols-2 lg:gap-20'>
-                <div>
-                    <h1>Hello Here is the recipe: {chef.name} </h1>
-                </div>
-                <div>
-                    <img className='w-5/6 h-[600px]' src={chef.img} alt="" />
-                </div>
-            </div>
-
-            
-        </div>
-        <div className='bg-[#1b4352] py-16'>
-            <div className='my-container pr-20 '>
-                <h1 className='text-[#fff] text-3xl font-serif font-semibold pb-4 text-center'>Chef Special</h1>
-                {
-                    loading ?
-                        <div className='flex justify-center'><div className="radial-progress text-primary" style={{ "--value": 70 }}>70%</div></div>
-                        :
-                        <div className='space-y-10 '>
-                            {
-                                recipes.map(recipe => <RecipeDetails
-                                    recipe={recipe}
-                                    key={recipe.id}
-
-                                ></RecipeDetails>)
-                            }
+        <section >
+            <div className='bg-[#eee4dd]'>
+                <div className='my-container m-auto '>
+                    <div className='py-10 grid lg:grid-cols-2 lg:gap-20'>
+                        <div className='text-right'>
+                            <h1 className='text-3xl font-serif'> {chef.name} </h1>
+                            <p><span className='text-2xl font-bold'>Bio:</span> {chef.bio} </p>
+                            <p className='text-xl font-semibold'>Experience: {chef.yearOfExperience} Years</p>
+                            <p className='text-xl font-semibold'>Chef Special Recipe: {chef.numOfRecipes}</p>
+                           <div className='text-center'>
+                           <p className='flex justify-end items-center gap-1 text-lg lg:text-xl'><FaHeart className='text-red-500'></FaHeart> {chef.likes}</p>
+                           </div>
                         </div>
-                }
+                        <div>
+                            <img className='w-5/6 h-[400px]' src={chef.bg_photo} alt="" />
+                        </div>
+                    </div>
 
+
+                </div>
             </div>
-        </div>
+            <div className='bg-[#1b4352] py-16'>
+                <div className='my-container pr-20 '>
+                    <h1 className='text-[#fff] text-3xl font-serif font-semibold pb-4 text-center'>Chef Special</h1>
+                    {
+                        loading ?
+                            <div className='flex justify-center'><div className="radial-progress text-primary" style={{ "--value": 70 }}>70%</div></div>
+                            :
+                            <div className='space-y-10 '>
+                                {
+                                    recipes.map(recipe => <RecipeDetails
+                                        recipe={recipe}
+                                        key={recipe.id}
+
+                                    ></RecipeDetails>)
+                                }
+                            </div>
+                    }
+
+                </div>
+            </div>
         </section>
     );
 };

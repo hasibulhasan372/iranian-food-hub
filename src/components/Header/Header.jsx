@@ -1,6 +1,5 @@
 import React, { useContext, useState } from 'react';
 import { Link, NavLink } from 'react-router-dom';
-import { FaUserCircle } from 'react-icons/fa';
 import { AuthContext } from '../../context/AuthProvider/AuthProvider';
 
 const Header = () => {
@@ -23,7 +22,7 @@ const Header = () => {
     }
     return (
         <div className='my-container lg:m-auto'>
-            <div className="navbar bg-slate-200 ">
+            <div className="navbar ">
                 <div className="">
                     <Link to='/' className="btn btn-ghost normal-case lg:text-3xl">Iranian Food Hub</Link>
                 </div>
