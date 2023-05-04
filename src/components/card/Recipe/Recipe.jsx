@@ -3,6 +3,7 @@ import { useLoaderData } from 'react-router-dom';
 import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { FaHeart } from 'react-icons/fa';
+import LazyLoad from 'react-lazy-load';
 
 const Recipe = () => {
     const { loading } = useState(AuthContext)
@@ -18,6 +19,7 @@ const Recipe = () => {
                 setChef(selectedChef)
             })
     }, []);
+    
 
     return (
         <section >
@@ -34,7 +36,9 @@ const Recipe = () => {
                            </div>
                         </div>
                         <div>
+                            <LazyLoad height={400} offset={100}>
                             <img className='w-5/6 h-[400px]' src={chef.bg_photo} alt="" />
+                            </LazyLoad>
                         </div>
                     </div>
 

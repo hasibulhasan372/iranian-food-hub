@@ -22,7 +22,7 @@ const Login = () => {
         .then(result =>{
             const loggedUser = result.user;
             form.reset('');
-            navigate(from, {replace : true})
+            navigate(from, {replace : true});
         })
         .catch(error =>{
             return setError('Wrong email or password ')

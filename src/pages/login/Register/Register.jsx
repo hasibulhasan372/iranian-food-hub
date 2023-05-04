@@ -1,10 +1,9 @@
 import React, { useContext, useState } from 'react';
-import { Form, Link, useLocation, useNavigate } from 'react-router-dom';
+import { Form, Link, useNavigate } from 'react-router-dom';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import GoogleReg from '../../../components/GoogleReg/GoogleReg';
 import GithubReg from '../../../components/GithubReg/GithubReg';
-import {  toast } from 'react-toastify';
-import { signOut, updateProfile } from 'firebase/auth';
+import {  updateProfile } from 'firebase/auth';
 
 
 const Register = () => {
@@ -34,7 +33,7 @@ const Register = () => {
             form.reset('');
             setError('');
             logOut();
-            navigate('/login');
+            navigate('/login', {replace: true});
             
             
         })
@@ -94,7 +93,6 @@ const Register = () => {
                 </div>
         </div>
         </div>
-        
     </div>
     );
 };

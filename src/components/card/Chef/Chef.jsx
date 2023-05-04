@@ -14,6 +14,7 @@ const Chef = () => {
             .then(data => setChefs(data))
             
     }, []);
+    
 
     return (
       <section className='bg-[#1b4352]'>

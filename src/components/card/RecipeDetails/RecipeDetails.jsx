@@ -1,18 +1,31 @@
-import React, { useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import { Rating } from '@smastrom/react-rating'
 import '@smastrom/react-rating/style.css'
 import { ToastContainer, toast } from 'react-toastify';
 import LazyLoad from 'react-lazy-load';
+import { getDataFromBb, setDataDb } from '../../../utility/fakedb';
 
 const RecipeDetails = ({ recipe }) => {
-  const { name, ratings, img, ingredients, cookingMethods } = recipe;
-  const [btnDisabled, setBtnDisabled] = useState(true)
+  const {id, name, ratings, img, ingredients, cookingMethods } = recipe;
+  const [btnDisabled, setBtnDisabled] = useState(true);
+  
 
-  const handleFavorite = () =>{
-        setBtnDisabled(false)
+  const handleFavorite = (id) =>{
+        setDataDb(id);
+        setBtnDisabled(false);
         return toast("This is my favorite Recipe");
          
   }
+  useEffect(() =>{
+    const getFavRecipe = getDataFromBb();
+        if(getFavRecipe){
+          for(const id in getFavRecipe){
+            if(recipe.id === id){
+              setBtnDisabled(false)
+            }
+          }
+        }
+  }, [])
 
   return (
 
@@ -26,7 +39,7 @@ const RecipeDetails = ({ recipe }) => {
           <span className='text-[#1ecb71]'>{ratings}</span>
         </div>
         <div className="mt-3 ">
-          <button onClick={handleFavorite} disabled={!btnDisabled} className="favorite-btn">Favorite</button>
+          <button onClick={()=>handleFavorite(id)} disabled={!btnDisabled} className="favorite-btn">Favorite</button>
         </div>
         </div>
       </div>

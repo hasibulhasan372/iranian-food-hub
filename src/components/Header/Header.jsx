@@ -28,10 +28,10 @@ const Header = () => {
         <div className='my-container lg:m-auto'>
             <div className="navbar ">
                 <div className="">
-                    <Link to='/' className="btn btn-ghost normal-case text-xl lg:text-3xl">Iranian Food Hub</Link>
+                    <Link to='/' className="btn btn-ghost px-0 lg:px-3 mr-1 normal-case text-xl lg:text-3xl">Iranian Food Hub</Link>
                 </div>
 
-                <div className="flex-none lg:pl-[450px] lg:gap-32 gap-6 text-right">
+                <div className="flex-none pl-2 lg:pl-[450px] lg:gap-32 gap-6 text-right">
                 <button onClick={() => setOpen(!open)} className='lg:hidden'>
                         {
                             open ? <HiX className="h-6 w-6 text-slate-700 " ></HiX> : <FaBars className="h-6 w-6 text-slate-700 "></FaBars>
@@ -41,6 +41,7 @@ const Header = () => {
                     <div className={`space-x-10 text-lg font-semibold absolute lg:static ${open ? 'hum-menu' : '-top-36 right-0 text-center'}`}>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/blog'>Blog</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/favorite'>Favorite</NavLink>
                     </div>
                     <div className="dropdown dropdown-end">
                         {
