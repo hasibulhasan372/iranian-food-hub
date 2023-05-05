@@ -31,7 +31,7 @@ const Header = () => {
                     <Link to='/' className="btn btn-ghost px-0 lg:px-3 mr-1 normal-case text-xl lg:text-3xl">Iranian Food Hub</Link>
                 </div>
 
-                <div className="flex-none pl-2 lg:pl-[450px] lg:gap-32 gap-6 text-right">
+                <div className="flex-none pl-2 lg:pl-[350px] lg:gap-32 gap-6 text-right">
                 <button onClick={() => setOpen(!open)} className='lg:hidden'>
                         {
                             open ? <HiX className="h-6 w-6 text-slate-700 " ></HiX> : <FaBars className="h-6 w-6 text-slate-700 "></FaBars>

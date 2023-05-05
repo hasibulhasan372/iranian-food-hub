@@ -58,7 +58,7 @@ const Register = () => {
     return (
         <div className='my-container flex justify-center bg-[#b3c4ca] lg:pb-[100px]'>
         
-        <div className=' lg:w-2/6 lg:mt-10 border rounded lg:p-6 bg-[#839da3] '>
+        <div className=' lg:w-2/6 lg:mt-10 border rounded lg:p-6 bg-[#a9c5cb] '>
             <p className='text-lg font-bold mb-2'>Please Sign Up</p>
         <Form onSubmit={handleSignUp}>
             <div className='w-full'>
