@@ -4,6 +4,9 @@ import RecipeDetails from '../RecipeDetails/RecipeDetails';
 import { AuthContext } from '../../../context/AuthProvider/AuthProvider';
 import { FaHeart } from 'react-icons/fa';
 import LazyLoad from 'react-lazy-load';
+import { LazyLoadImage } from 'react-lazy-load-image-component';
+import 'react-lazy-load-image-component/src/effects/blur.css';
+
 
 const Recipe = () => {
     const { loading } = useState(AuthContext)
@@ -36,9 +39,11 @@ const Recipe = () => {
                            </div>
                         </div>
                         <div>
-                            <LazyLoad height={400} offset={100}>
-                            <img className='w-5/6 h-[400px]' src={chef.bg_photo} alt="" />
-                            </LazyLoad>
+                            <LazyLoadImage
+                            src= {chef.bg_photo}
+                            className='w-5/6 h-[400px]'
+                            effect='blur'
+                            ></LazyLoadImage>
                         </div>
                     </div>
 
