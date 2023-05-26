@@ -9,6 +9,7 @@ import PrivateRoute from "./PrivateRoute";
 import Error from "../pages/Error/Error";
 import Blog from "../pages/BLog/Blog";
 import Favorite from "../components/Favorite/Favorite";
+import Contact from "../pages/Contact/Contact";
 
 const router = createBrowserRouter([
     {
@@ -45,6 +46,10 @@ const router = createBrowserRouter([
                 path: 'favorite',
                 element: <Favorite></Favorite>,
                 loader: () => fetch('https://iranian-food-hub-server-hasibulhasan372.vercel.app/recipe')
+            },
+            {
+                path: "contact",
+                element: <Contact></Contact>
             }
         ]
     }
