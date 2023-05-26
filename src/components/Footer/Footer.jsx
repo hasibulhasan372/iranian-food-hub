@@ -31,7 +31,8 @@ const Footer = () => {
                     <ul className='mt-4 list-none space-y-2'>
                         <li ><Link to='/' >Home</Link></li>
                         <li><Link to='/blog'>Blog</Link></li>
-                        <li><Link to='/Login'>Login</Link></li>
+                        <li><Link to='/login'>Login</Link></li>
+                        <li><Link to='/contact'>Contact</Link></li>
                     </ul>
                 </div>
                 <div className='text-[#fffc]'>
