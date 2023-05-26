@@ -41,6 +41,7 @@ const Header = () => {
                     <div className={`space-x-10 text-lg font-semibold absolute lg:static ${open ? 'hum-menu' : '-top-36 right-0 text-center'}`}>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/'>Home</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/blog'>Blog</NavLink>
+                        <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/contact'>Contact</NavLink>
                         <NavLink className={({ isActive }) => isActive ? "active" : ""} to='/favorite'>Favorite</NavLink>
                     </div>
                     <div className="dropdown dropdown-end">
